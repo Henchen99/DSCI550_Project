@@ -3,4 +3,3 @@ tika
 number_parser
 datefinder
 scikit-learn
-spacy
