@@ -1,23 +1,24 @@
 import pandas as pd
 import os
 
+##################################################
+####### Convert haunted_places.csv to .tsv #######
+##################################################
+
 # Step 1: Define relative paths
-# Navigate up one level to access the 'data' folder
-input_file = os.path.join('..', 'data', 'haunted_places.csv')  # Correct relative path
-output_file = os.path.join('..', 'data', 'haunted_places.tsv')  # Output TSV file in the same folder
+input_file = os.path.join('..', 'data', 'haunted_places.csv')
+output_file = os.path.join('..', 'data', 'haunted_places.tsv')
 
-# Debugging: Print the full path to verify
-print(f"Looking for input file at: {os.path.abspath(input_file)}")
-
-# Step 2: Read the CSV file into a pandas DataFrame
-try:
-    df = pd.read_csv(input_file)
-    print("File loaded successfully!")
-except FileNotFoundError:
+# Step 2: Check if the file exists before attempting to read
+if not os.path.exists(input_file):
     print(f"Error: File not found at {os.path.abspath(input_file)}")
     exit(1)
 
-# Step 3: Save the DataFrame as a TSV file
-df.to_csv(output_file, sep='\t', index=False)
+# Step 3: Read the CSV file into a pandas DataFrame
+df = pd.read_csv(input_file)
+print(f"File loaded successfully from: {os.path.abspath(input_file)}")
 
-print(f"File converted successfully: {output_file}")
+# Step 4: Save the DataFrame as a TSV file
+df.to_csv(output_file, sep='\t', index=False)
+print(f"File converted successfully: {os.path.abspath(output_file)}")
+
