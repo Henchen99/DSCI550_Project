@@ -1,5 +1,7 @@
 pandas
+requests
 tika
 number_parser
 datefinder
-scikit-learn
+beautifulsoup4
+
