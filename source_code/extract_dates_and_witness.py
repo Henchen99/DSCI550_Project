@@ -2,7 +2,7 @@ import pandas as pd
 
 hp_df = pd.read_csv("../raw/haunted_places.csv")
 from transformers import pipeline
-pipe = pipeline("text-generation", model="Qwen/Qwen2.5-32B-Instruct",device_map="auto")
+pipe = pipeline("text-generation", model="Qwen/Qwen2.5-1.5B-Instruct",device_map="auto")
 
 def date_extraction(description):
     prompt = """
