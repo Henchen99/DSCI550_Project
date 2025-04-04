@@ -11,11 +11,11 @@ pipe = FluxPipeline.from_pretrained(
     "black-forest-labs/FLUX.1-dev",
     torch_dtype=torch.float16
 )
-pipe.to("cuda")
+pipe.to("cpu")
 
 # === Paths ===
-csv_path = "/vault/ultraz/unsloth_grpo/DSCI550_Project/data/processed/hp_with_date_and_witness_count.csv"
-output_img_dir = "/vault/ultraz/unsloth_grpo/DSCI550_Project/data/text_to_images"
+csv_path = "DSCI550_Project/data/processed/hp_with_date_and_witness_count.csv"
+output_img_dir = "DSCI550_Project/data/text_to_images"
 output_excel_path = csv_path.replace(".csv", "_FULL_with_images.xlsx")
 
 # Ensure image output directory exists
